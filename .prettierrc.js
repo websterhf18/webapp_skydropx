@@ -13,4 +13,3 @@ module.exports = {
     proseWrap: "preserve",
     quoteProps: "as-needed",
 };
-  
