@@ -17,6 +17,8 @@ Desarrollar una aplicación que permita al usuario escoger la opción de servici
 npm install
 ```
 
+- Para iniciar el proyecto en modo desarrollo:
+
 ```
 npm run dev
 ```
