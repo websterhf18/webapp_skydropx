@@ -1,3 +1,40 @@
 {
-    "extends": "next/core-web-vitals"
+    "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "next",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["prettier", "@typescript-eslint"],
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "project": ["./tsconfig.json"]
+    },
+    "rules": {
+        "prettier/prettier": "warn",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            { "argsIgnorePattern": "^_.+" }
+        ],
+        "@typescript-eslint/no-use-before-define": ["error", { "variables": false }],
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/order": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never",
+            "json": "ignorePackages"
+          }
+        ],
+        "import/no-unresolved": ["error", { "caseSensitive": false }]
+    }
 }
