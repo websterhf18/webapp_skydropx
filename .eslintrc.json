@@ -1,7 +1,29 @@
 {
     "extends": "next",
     "rules": {
-      "react/no-unescaped-entities": "off",
-      "@next/next/no-page-custom-font": "off"
-    }
+        "prettier/prettier": "warn",
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          { "argsIgnorePattern": "^_.+" }
+        ],
+        "@typescript-eslint/no-use-before-define": ["error", { "variables": false }],
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "import/order": "off",
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never",
+            "json": "ignorePackages"
+          }
+        ],
+        "import/no-unresolved": ["error", { "caseSensitive": false }]
+      }
   }
