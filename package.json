@@ -14,7 +14,7 @@
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
-      "npm run lint",
+      "eslint",
       "npm run test:related"
     ]
   },
