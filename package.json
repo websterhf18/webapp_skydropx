@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint-local": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "test": "node --experimental-vm-modules node_modules/.bin/jest",
     "test:related": "node --experimental-vm-modules node_modules/.bin/jest --findRelatedTests",
@@ -15,7 +14,7 @@
   },
   "lint-staged": {
     "*.+(js|jsx|ts|tsx)": [
-      "npm run lint --fix",
+      "eslint",
       "npm run test:related"
     ]
   },
