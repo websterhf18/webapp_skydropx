@@ -1,30 +1,31 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setErrorStatus } from "../../models/shippingSlice";
 
 import skydropxAPI from "../../utils/api/skydropx";
+import { rateData } from "../../utils/helpers/types";
 
-type rateData = {
-  id: string;
-  attributes: {
-    days: number;
-    amount_local: string;
-    provider: string;
-    currency_local: string;
-  };
-};
 type Props = {
   indexCard: number;
   rateData: rateData;
 };
 
 export default function ShippingRateCard({ indexCard, rateData }: Props) {
+  const dispatch = useDispatch();
   const createLabelAction = async () => {
     try {
       const { data } = await skydropxAPI.createLabel({
         label_format: "pdf",
         rate_id: parseInt(rateData.id),
       });
+      if (data.attributes.status === "ERROR") {
+        dispatch(setErrorStatus(true));
+        return false;
+      }
       window.location.href = data.attributes.label_url;
-    } catch (error) {}
+    } catch (error) {
+      dispatch(setErrorStatus(true));
+    }
   };
   return (
     <div

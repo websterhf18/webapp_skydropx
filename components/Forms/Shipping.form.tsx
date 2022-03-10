@@ -50,12 +50,6 @@ const ShippingForm = (
     handleBlur,
     values,
     errors,
-    touched,
-    dirty,
-    isValid,
-    validateField,
-    setFieldValue,
-    setFieldTouched,
     isSubmitting,
   } = props;
 

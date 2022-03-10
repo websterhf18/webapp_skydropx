@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { rateData } from "../../utils/helpers/types";
 import ShippingRateCard from "./ShippingRate.card";
 
 export default function ShippingCompaniesContainer() {
@@ -8,7 +9,7 @@ export default function ShippingCompaniesContainer() {
   );
   return (
     <div className="m-3">
-      {ratesList.map((rate: any, index: number) => {
+      {ratesList.map((rate: rateData, index: number) => {
         return (
           <ShippingRateCard key={rate.id} indexCard={index} rateData={rate} />
         );

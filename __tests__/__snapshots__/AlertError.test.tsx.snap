@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders the Label Error Alert Component 1`] = `
+<div
+  className="my-alert-top alert alert-danger alert-dismissible d-block"
+>
+  <strong>
+    Error!
+  </strong>
+   No se puede abrir el documento
+  <button
+    className="btn-close"
+    onClick={[Function]}
+    type="button"
+  />
+</div>
+`;

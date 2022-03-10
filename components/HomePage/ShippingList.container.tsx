@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { findByIdAddress } from "../../utils/helpers";
+import { shippingData } from "../../utils/helpers/types";
 
 export default function ShippingListContainer() {
   const shippingList = useSelector(
@@ -11,26 +12,26 @@ export default function ShippingListContainer() {
     ({ shipping }: { shipping: any }) => shipping.shipmentsIncluded,
   );
 
-  const parseAddressFrom = (shipping: any) => {
-    const id_address = shipping.relationships.address_from.data.id;
+  const parseAddressFrom = (shipping: shippingData) => {
+    const id_address = shipping.relationships?.address_from.data.id;
     const addressFrom = findByIdAddress(id_address, shippingIncludeList);
     return addressFrom.attributes.zip;
   };
 
-  const parseAddresTo = (shipping: any) => {
-    const id_address = shipping.relationships.address_to.data.id;
+  const parseAddresTo = (shipping: shippingData) => {
+    const id_address = shipping.relationships?.address_to.data.id;
     const addressTo = findByIdAddress(id_address, shippingIncludeList);
     return addressTo.attributes.zip;
   };
 
-  const parseParcel = (shipping: any) => {
+  const parseParcel = (shipping: shippingData) => {
     const id_parcel = shipping.relationships?.parcels.data[0].id;
     const parcel_object = findByIdAddress(id_parcel, shippingIncludeList);
     const { attributes } = parcel_object;
     return `${attributes.length}x${attributes.height}x${attributes.width} ${attributes.distance_unit}`;
   };
 
-  const parseParcelPeso = (shipping: any) => {
+  const parseParcelPeso = (shipping: shippingData) => {
     const id_parcel = shipping.relationships?.parcels.data[0].id;
     const parcel_object = findByIdAddress(id_parcel, shippingIncludeList);
     const { attributes } = parcel_object;
@@ -51,7 +52,7 @@ export default function ShippingListContainer() {
           </tr>
         </thead>
         <tbody>
-          {shippingList.map((shipping: any) => {
+          {shippingList.map((shipping: shippingData) => {
             return (
               <tr key={shipping.id} className="text-center">
                 <th scope="row">{shipping.id}</th>

@@ -34,7 +34,6 @@ export type Parcel = {
 };
 export type createShipmentsRequest = {
   address_from: AddressFrom;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   parcels: Array<Parcel>;
   address_to: AddressTo;
   consignment_note_class_code: string;
@@ -71,6 +70,7 @@ export type createLabelResponse = {
     type: string;
     attributes: {
       label_url: string;
+      status: string;
     };
   };
 };

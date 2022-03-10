@@ -7,6 +7,7 @@ const shippingSlice = createSlice({
     shipments: [],
     shipmentsIncluded: [],
     tabStatus: "form",
+    errorStatus: false,
   },
   reducers: {
     setRates: (state, action) => {
@@ -21,10 +22,18 @@ const shippingSlice = createSlice({
     setTabStatus: (state, action) => {
       state.tabStatus = action.payload;
     },
+    setErrorStatus: (state, action) => {
+      state.errorStatus = action.payload;
+    },
   },
 });
 
-export const { setRates, setTabStatus, setShipments, setShipmentsIncluded } =
-  shippingSlice.actions;
+export const {
+  setRates,
+  setTabStatus,
+  setShipments,
+  setShipmentsIncluded,
+  setErrorStatus,
+} = shippingSlice.actions;
 
 export default shippingSlice.reducer;

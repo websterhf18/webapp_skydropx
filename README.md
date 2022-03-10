@@ -35,7 +35,8 @@ npm run test
 ├── ___tests___ - Contiene las pruebas de props de los componentes
 ├── components
 │   └── ...
-│   └── HomePage - Contiene componentes del home (Formularios, Tabs, Listados)
+│   └── HomePage - Contiene componentes del home (Tabs, Listados)
+│   └── Forms - Contiene componentes formularios del home
 │   └── ...
 ├── models - Modelos de datos de Redux
 ├── pages - Paginas principales
