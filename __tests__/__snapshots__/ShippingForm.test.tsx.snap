@@ -19,6 +19,7 @@ exports[`Renders the Shipping Form Component 1`] = `
       </label>
       <input
         className="form-control "
+        data-testid="codigo_origen_test"
         name="codigo_origen"
         onBlur={[Function]}
         onChange={[Function]}
@@ -37,6 +38,7 @@ exports[`Renders the Shipping Form Component 1`] = `
       </label>
       <input
         className="form-control "
+        data-testid="codigo_destino_test"
         name="codigo_destino"
         onBlur={[Function]}
         onChange={[Function]}
@@ -55,6 +57,7 @@ exports[`Renders the Shipping Form Component 1`] = `
       </label>
       <input
         className="form-control "
+        data-testid="peso_test"
         name="peso"
         onBlur={[Function]}
         onChange={[Function]}
@@ -72,6 +75,7 @@ exports[`Renders the Shipping Form Component 1`] = `
       </label>
       <input
         className="form-control "
+        data-testid="altura_test"
         name="altura"
         onBlur={[Function]}
         onChange={[Function]}
@@ -89,6 +93,7 @@ exports[`Renders the Shipping Form Component 1`] = `
       </label>
       <input
         className="form-control "
+        data-testid="ancho_test"
         name="ancho"
         onBlur={[Function]}
         onChange={[Function]}
@@ -106,6 +111,7 @@ exports[`Renders the Shipping Form Component 1`] = `
       </label>
       <input
         className="form-control "
+        data-testid="largo_test"
         name="largo"
         onBlur={[Function]}
         onChange={[Function]}
@@ -118,6 +124,7 @@ exports[`Renders the Shipping Form Component 1`] = `
   />
   <button
     className="w-100 btn btn-primary btn-lg"
+    data-testid="send_submit_test"
     disabled={false}
     type="submit"
   >

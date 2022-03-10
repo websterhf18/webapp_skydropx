@@ -1,4 +1,6 @@
-<p align="center"><img src="https://via.placeholder.com/400" width="400"></p>
+## Url del Proyecto
+
+[Vercel Deploy App](https://webapp-skydropx.vercel.app/)
 
 ## Requerimientos
 
@@ -32,11 +34,12 @@ npm run test
 ## Estructura de Archivos
 
 ```
-├── ___tests___ - Contiene las pruebas de props de los componentes
+├── ___tests___ - Contiene las pruebas de props y formularios
 ├── components
 │   └── ...
 │   └── HomePage - Contiene componentes del home (Tabs, Listados)
 │   └── Forms - Contiene componentes formularios del home
+│   └── Alerts - Contiene Alertas o mensajes de error de la aplicacion
 │   └── ...
 ├── models - Modelos de datos de Redux
 ├── pages - Paginas principales

@@ -1,4 +1,4 @@
-import { Formik, FormikProps } from "formik";
+import { Formik, FormikProps, ErrorMessage } from "formik";
 import React from "react";
 import * as yup from "yup";
 import { INITIAL_VALUES } from "../../utils/constants";
@@ -61,6 +61,7 @@ const ShippingForm = (
             Codigo postal origen
           </label>
           <input
+            data-testid="codigo_origen_test"
             type="text"
             name="codigo_origen"
             onChange={handleChange}
@@ -83,6 +84,7 @@ const ShippingForm = (
           </label>
           <input
             type="text"
+            data-testid="codigo_destino_test"
             name="codigo_destino"
             onChange={handleChange}
             onBlur={handleBlur}
@@ -103,6 +105,7 @@ const ShippingForm = (
             Peso
           </label>
           <input
+            data-testid="peso_test"
             type="number"
             name="peso"
             onChange={handleChange}
@@ -119,6 +122,7 @@ const ShippingForm = (
             Altura
           </label>
           <input
+            data-testid="altura_test"
             type="number"
             name="altura"
             onChange={handleChange}
@@ -135,6 +139,7 @@ const ShippingForm = (
             Ancho
           </label>
           <input
+            data-testid="ancho_test"
             type="number"
             name="ancho"
             onChange={handleChange}
@@ -151,6 +156,7 @@ const ShippingForm = (
             Largo
           </label>
           <input
+            data-testid="largo_test"
             type="number"
             name="largo"
             onChange={handleChange}
@@ -167,6 +173,7 @@ const ShippingForm = (
       <button
         className="w-100 btn btn-primary btn-lg"
         type="submit"
+        data-testid="send_submit_test"
         disabled={isSubmitting}
       >
         {isSubmitting ? (
