@@ -23,9 +23,16 @@ npm install
 npm run dev
 ```
 
+- Para probar los componentes del proyecto:
+
+```
+npm run test
+```
+
 ## Estructura de Archivos
 
 ```
+├── ___tests___ - Contiene las pruebas de props de los componentes
 ├── components
 │   └── ...
 │   └── HomePage - Contiene componentes del home (Formularios, Tabs, Listados)

@@ -1,7 +1,6 @@
 import "../styles/main.scss";
 
 import type { AppProps } from "next/app";
-
 import { Provider } from "react-redux";
 import store from "../models/index";
 

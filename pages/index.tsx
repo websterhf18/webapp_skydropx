@@ -1,7 +1,40 @@
-import type { NextPage } from "next";
-import ShippingTabsContainer from "../components/HomePage/ShippingTabs.container";
+import { GetServerSideProps } from "next/types";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const Home: NextPage = () => {
+import ShippingTabsContainer from "../components/HomePage/ShippingTabs.container";
+import {
+  setTabStatus,
+  setShipments,
+  setShipmentsIncluded,
+} from "../models/shippingSlice";
+
+import skydropxAPI from "../utils/api/skydropx";
+
+interface Props {
+  shipments: Array<any>;
+  searchArray: Array<any>;
+}
+
+export default function Home({
+  shipments,
+  searchArray,
+}: Props): React.ReactElement {
+  console.log(shipments);
+  const dispatch = useDispatch();
+  const tabStatus = useSelector(
+    ({ shipping }: { shipping: any }) => shipping.tabStatus,
+  );
+
+  const onChangeTab = (tabSlug: string) => {
+    dispatch(setTabStatus(tabSlug));
+  };
+
+  useEffect(() => {
+    dispatch(setShipments(shipments));
+    dispatch(setShipmentsIncluded(searchArray));
+  }, []);
+
   return (
     <div className="container">
       <main>
@@ -16,12 +49,20 @@ const Home: NextPage = () => {
           <div className="col-md-10 m-auto">
             <ul className="nav nav-tabs nav-fill">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a
+                  className={`nav-link ${tabStatus === "form" ? "active" : ""}`}
+                  href="#"
+                  onClick={() => onChangeTab("form")}
+                >
                   Crear Envio
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a
+                  className={`nav-link ${tabStatus === "list" ? "active" : ""}`}
+                  href="#"
+                  onClick={() => onChangeTab("list")}
+                >
                   Envios
                 </a>
               </li>
@@ -32,6 +73,9 @@ const Home: NextPage = () => {
       </main>
     </div>
   );
-};
+}
 
-export default Home;
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data, included } = await skydropxAPI.getShipments();
+  return { props: { shipments: data, searchArray: included } };
+};

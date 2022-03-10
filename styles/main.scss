@@ -3,3 +3,19 @@
 .container {
   max-width: 960px;
 }
+.promo-card {
+  border-width: 2px !important;
+  border-color: #198754 !important;
+}
+.promo-card::after {
+  position: absolute;
+  content: attr(data-label);
+  font-size: 0.75em;
+  top: -15px;
+  right: -5px;
+  background-color: #198754;
+  z-index: 12;
+  padding: 0.35em 0.65em;
+  border-radius: 0.25rem;
+  color: #fff;
+}
